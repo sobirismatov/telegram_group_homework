@@ -12,9 +12,11 @@ def find_all_users_name(data: dict)->list:
     data=data["messages"]
     a=[]
     for i in data:
-        if i["type"]=="service" and i["actor_id"] not in a:
-            a.append(i["actor"])
-        elif i["type"]=="message" and i["from_id"] not in a:
-            a.append(i["from"])
+        if i["type"]=="service" :
+            if i["actor_id"] not in a:
+               a.append(i["actor"])
+        elif i["type"]=="message" :
+            if i["from_id"] not in a:
+               a.append(i["from"])
     return a
-print(find_all_users_name(data))
+
