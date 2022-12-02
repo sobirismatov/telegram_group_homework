@@ -19,3 +19,4 @@ def find_all_users_id(data: dict)->list:
             if i["from_id"] not in a:
                 a.append(i["from_id"])
     return a
+print(find_all_users_id(data))
