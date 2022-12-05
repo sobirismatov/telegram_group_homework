@@ -13,11 +13,7 @@ def find_number_of_messages(data: dict)->int:
     dic=data["messages"]
     a=[]
     for i in dic:
-        if i["type"]=="service":
-            if  i["actor_id"] not in a:
-                a.append(i["id"])
-        elif i["type"]=="message":
-            if i["from_id"] not in a:
-                a.append(i["id"])
-    return a
+        if i["type"]=="message":
+            a.append(i["id"])
+    return len(a)
 print(find_number_of_messages(data))
